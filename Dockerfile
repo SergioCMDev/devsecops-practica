@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 WORKDIR /code
 
@@ -7,6 +7,7 @@ ENV FLASK_APP=app/app.py \
   PYTHONDONTWRITEBYTECODE=1 \
   PYTHONUNBUFFERED=1
 
+RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
 RUN addgroup --system appgroup && adduser --system --group appuser
 
 COPY requirements.txt requirements.txt

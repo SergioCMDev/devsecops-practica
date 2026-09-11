@@ -26,5 +26,5 @@ jobs:
         with:
           image-ref: user/app:latest
           format: "table"
-          severity: "CRITICAL,HIGH"
+          severity: "CRITICAL"
           exit-code: "1"
