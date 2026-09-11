@@ -10,7 +10,7 @@ ENV FLASK_APP=app/app.py \
 RUN addgroup --system appgroup && adduser --system --group appuser
 
 COPY requirements.txt requirements.txt
-RUN python -m pip install --upgrade pip setuptools==78.1.1 wheel && \
+RUN python -m pip install --upgrade pip setuptools==78.1.1 wheel==0.46.2 && \
     pip install --no-cache-dir -r requirements.txt
 
 COPY --chown=appuser:appgroup . .
